@@ -1,0 +1,10 @@
+{
+  "id": "common-dev-tools",
+  "version": "1.0.0",
+  "name": "Common Development Tools",
+  "description": "Common Development Tools",
+  "installsAfter": 
+  [
+    "ghcr.io/devcontainers/features/common-utils"
+  ]
+}
