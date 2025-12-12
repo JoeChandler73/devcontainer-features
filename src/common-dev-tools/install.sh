@@ -48,7 +48,7 @@ if [ -z "$1" ] || [ -z "$2" ]; then
 fi
 git config --global user.name "$1"
 git config --global user.email "$2"
-git config --global init.defaultBranch main
+git config --global init.defaultBranch master
 git config --global pull.rebase false
 echo "Git configured for $1 <$2>"
 EOF
