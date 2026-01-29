@@ -1,7 +1,7 @@
 {
   "id": "common-dev-tools",
   "version": "1.0.0",
-  "name": "Common Development Tools",
+  "name": "common-dev-tools",
   "description": "Common Development Tools",
   "installsAfter": 
   [

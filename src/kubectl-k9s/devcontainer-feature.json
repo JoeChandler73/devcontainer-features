@@ -1,7 +1,7 @@
 {
   "id": "kubectl-k9s",
   "version": "1.0.0",
-  "name": "kubectl and k9s",
+  "name": "kubectl-k9s",
   "description": "Installs kubectl and k9s for Kubernetes management",
   "options": {
     "kubectlVersion": {

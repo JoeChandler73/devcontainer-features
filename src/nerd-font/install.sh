@@ -7,21 +7,20 @@ HOME_DIR="/home/${USERNAME}"
 
 # Feature options (injected as environment variables with uppercase names)
 NERD_FONT=${NERDFONT:-"Hack"}
-STARSHIP_PRESET=${STARSHIPPRESET:-"catppuccin-powerline"}
 FONT_VERSION=${FONTVERSION:-"v3.4.0"}
 
 echo "Starting dev container customization for user: ${USERNAME}"
-echo "Configuration: Font=${NERD_FONT}, Preset=${STARSHIP_PRESET}"
+echo "Configuration: Font=${NERD_FONT}"
 
 # --- Step 1: Install dependencies ---
 echo "Installing fontconfig and unzip..."
 export DEBIAN_FRONTEND=noninteractive
 apt-get update && \
 apt-get install -y --no-install-recommends \
-    fontconfig \
-    unzip \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
+        fontconfig \
+        unzip \
+        curl \
+        && rm -rf /var/lib/apt/lists/*
 
 # --- Step 2: Install Nerd Fonts ---
 echo "Installing Nerd Font: ${NERD_FONT}..."
@@ -41,41 +40,9 @@ else
     echo "Warning: Failed to download Nerd Font '${NERD_FONT}'. Continuing anyway..."
 fi
 
-# --- Step 3: Install Starship ---
-echo "Installing Starship prompt..."
-if curl -fsSL https://starship.rs/install.sh | sh -s -- -y; then
-    echo "Starship installed successfully."
-else
-    echo "Error: Starship installation failed."
-    exit 1
-fi
-
-# --- Step 4: Configure Starship ---
-echo "Configuring Starship with preset: ${STARSHIP_PRESET}..."
-
-# Add Starship initialization to .bashrc if not already present
-if ! grep -q "starship init bash" "${HOME_DIR}/.bashrc" 2>/dev/null; then
-    cat << 'EOF' >> "${HOME_DIR}/.bashrc"
-
-# --- Starship Prompt Configuration ---
-eval "$(starship init bash)"
-EOF
-    echo "Added Starship to .bashrc"
-else
-    echo "Starship already configured in .bashrc"
-fi
-
-# Set up Starship config
-mkdir -p "${HOME_DIR}/.config"
-if command -v starship >/dev/null 2>&1; then
-    starship preset "${STARSHIP_PRESET}" -o "${HOME_DIR}/.config/starship.toml"
-    echo "Starship preset '${STARSHIP_PRESET}' configured."
-fi
-
 # --- Step 5: Fix permissions ---
 echo "Fixing permissions..."
 chown -R "${USERNAME}:${USERNAME}" "${HOME_DIR}/.local" 2>/dev/null || true
-chown -R "${USERNAME}:${USERNAME}" "${HOME_DIR}/.config" 2>/dev/null || true
 
 echo "Dev container customization complete!"
-echo "Font: ${NERD_FONT} | Preset: ${STARSHIP_PRESET}"
+echo "Font: ${NERD_FONT}"

@@ -1,0 +1,25 @@
+{
+    "id": "starship-prompt",
+    "version": "1.0.0",
+    "name": "starship-prompt",
+    "description": "Installs Starship command prompt",
+    "options": {
+        "starshipPreset": {
+            "type": "string",
+            "enum": [
+                "catppuccin-powerline",
+                "gruvbox-rainbow",
+                "jetpack",
+                "pure-preset",
+                "pastel-powerline",
+                "tokyo-night",
+                "nerd-font-symbols",
+                "bracketed-segments",
+                "plain-text-symbols",
+                "no-runtime-versions"
+            ],
+            "default": "catppuccin-powerline",
+            "description": "Starship preset to use"
+        }
+    }
+}

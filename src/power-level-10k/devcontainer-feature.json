@@ -1,0 +1,6 @@
+{
+  "id": "power-level-10k",
+  "version": "1.0.0",
+  "name": "power-level-10k",
+  "description": "Installs oh-my-zsh powerlevel10k plugin"
+}

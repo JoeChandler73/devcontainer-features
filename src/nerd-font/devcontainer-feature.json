@@ -1,8 +1,8 @@
 {
-  "id": "starship-nerd-font",
+  "id": "nerd-font",
   "version": "1.0.0",
-  "name": "Starship with Nerd Font",
-  "description": "Installs a Nerd Font and configures Starship prompt",
+  "name": "nerd-font",
+  "description": "Installs a Nerd Font",
   "options": {
     "nerdFont": {
       "type": "string",
@@ -79,23 +79,6 @@
       ],
       "default": "Hack",
       "description": "Which Nerd Font to install"
-    },
-    "starshipPreset": {
-      "type": "string",
-      "enum": [
-        "catppuccin-powerline",
-        "gruvbox-rainbow",
-        "jetpack",
-        "pure-preset",
-        "pastel-powerline",
-        "tokyo-night",
-        "nerd-font-symbols",
-        "bracketed-segments",
-        "plain-text-symbols",
-        "no-runtime-versions"
-      ],
-      "default": "catppuccin-powerline",
-      "description": "Starship preset to use"
     },
     "fontVersion": {
       "type": "string",

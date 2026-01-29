@@ -1,0 +1,19 @@
+{
+  "id": "zsh-syntax-highlighting",
+  "version": "1.0.0",
+  "name": "zsh-syntax-highlighting",
+  "description": "Installs oh-my-zsh zsh-syntax-highlighting plugin",
+  "options": {
+    "flavour": {
+      "type": "string",
+      "enum": [
+        "frappe",
+        "latte",
+        "macchiato",
+        "mocha"
+      ],
+      "default": "frappe",
+      "description": "Catppuccin falvour to use"
+    }
+  }
+}
